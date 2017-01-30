@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../scripts/jquery-3.1.0.min.js"></script>
+    <style>
+        div {
+            margin: 0 auto;
+            clear:both;
+            border:1px solid #OOO;
+            padding:2;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <div>
+            <p>Hey there!</p>
+        </div>
+        <div>
+            <script>
+                $(function () {
+                    $("<a />", {
+                        html: "This is a <strong>new</strong> link",
+                        "class": "link",
+                        href: "page.html"
+                    }).appendTo("p");
+                })();
+
+            </script>
+        </div>
+    </div>
+
+</body>
+</html>

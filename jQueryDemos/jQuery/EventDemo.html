@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="../scripts/jquery-3.1.0.min.js"></script>
+	<meta charset="utf-8" />
+    <style>
+        div {
+            margin: 2px;
+            font:bold 9pt 'Segoe UI';
+
+        }
+
+        .parent{
+            border: solid 2px black;
+            color:black;
+        }
+
+        .child{
+            border:solid 2px gray;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="parent" data-name="parent">
+        PARENT
+        <div class="child" data-name="child 1">CHILD 1</div>
+        <div class="child" data-name="child 2">CHILD 2</div>
+        <div class="child" data-name="child 3">CHILD 3</div>
+    </div>
+    <button id="turnEmOff">Turn 'em off</button>
+    <button id="triggerIt">Trigeer on Child 3</button>
+
+    <script>
+        $('div').on('click', function(ev) {
+            console.log(ev.currentTarget.dataset.name);
+            ev.stopPropagation();
+        });
+
+        $('#triggertIt').on('click', function(ev) {
+            $('div[data-name="child 3"]').trigger('click');
+        });
+
+        $('#turnEmOff').on('click', function(ev) {
+            $('div').off('click');
+        });
+
+    </script>
+</body>
+</html>

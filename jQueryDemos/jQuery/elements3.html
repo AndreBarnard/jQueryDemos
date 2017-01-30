@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../scripts/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+    <div>
+        <select id="options">
+            <option>append</option>
+            <option>appendTo</option>
+            <option>prepend</option>
+            <option>prependTo</option>            
+        </select>
+        <button id="button" onclick="modifyElement()">Modify</button>
+    </div>
+    <div style="height:50px;"></div>
+    <div id="main">
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+        <p>Third Paragraph</p>
+        <p>Fourth Paragraph</p>        
+    </div>    
+    <script>
+        function modifyElement() {
+            var option = $("#options").val();
+            switch (option) {
+                case "appendTo":
+                    $("<p class='dynamic'>this is appendTo</p>").appendTo("p");
+                    break;
+                case "append":
+                    $("p").append("<p class='dynamic'>this is append</p>");
+                    break;
+                case "prependTo":
+                    $("<p class='dynamic'>this is prependTo</p>").prependTo("p");
+                    break;
+                case "prepend":
+                    $("p").prepend("<p class='dynamic'>this is prepend</p>");
+                    break;
+            }
+        }
+
+    </script>
+</body>
+</html>
